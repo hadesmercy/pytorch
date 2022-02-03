@@ -1,14 +1,14 @@
 import cv2
 
 net = cv2.dnn.readNet(
-    "/Users/hadesmercy/PycharmProjects/pythonProject2/object_detection_crash_course/dnn_model/yolov4-tiny.cfg",
-    "/Users/hadesmercy/PycharmProjects/pythonProject2/object_detection_crash_course/dnn_model/yolov4-tiny.weights")
+    r"C:\Users\11520\PycharmProjects\pytorch\object_detection_crash_course\dnn_model\yolov4-tiny.cfg",
+    r"C:\Users\11520\PycharmProjects\pytorch\object_detection_crash_course\dnn_model\yolov4-tiny.weights")
 cap = cv2.VideoCapture(0)
 model = cv2.dnn_DetectionModel(net)
 model.setInputParams(size=(320, 320), scale=1 / 255)
 
 classes = []
-with open("/Users/hadesmercy/PycharmProjects/pythonProject2/object_detection_crash_course/dnn_model/classes.txt",
+with open(r"C:\Users\11520\PycharmProjects\pytorch\object_detection_crash_course\dnn_model\classes.txt",
           "r") as flie_object:
     for class_name in flie_object.readlines():
         class_name = class_name.strip()
